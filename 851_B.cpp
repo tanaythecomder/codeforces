@@ -26,9 +26,24 @@
     cin>>test;
      while(test--)
      {
+        int s=1;
         ll n;
         cin>>n;
-        cout<<n/2<<" "<<(n+1)/2<<endl;
+        ll n1 = n;
+        int count = 0;
+        ll first = 0;
+        while(n%10==9){
+            count++;
+            n=n/10;
+            if(s==1) {first +=pow(10,count-1)*4;s=0;}
+            else {first +=pow(10,count-1)*5; s=1;}
+        }
+        
+        first+=pow(10, count)*((n+1)/2);
+        if(first!=0) cout<<first<<" "<< n1-first;
+
+        else cout<<n/2<<" "<<(n+1)/2;
+        cout<<endl;
         
      }
      return 0;
