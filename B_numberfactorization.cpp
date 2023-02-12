@@ -19,11 +19,8 @@ vector<int> primeFactors(int n)
 { 
     vector<int> prime;
     if(n%2==0) prime.push_back(2);
-    while (n % 2 == 0) 
-    { 
-        
-        n = n/2; 
-    } 
+    while (n % 2 == 0) n = n/2; 
+    
 
     for (int i = 3; i <= sqrt(n); i = i + 2) 
     { 
@@ -65,3 +62,5 @@ int32_t main() {
     }
     return 0;
 }
+
+
